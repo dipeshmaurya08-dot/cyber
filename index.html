@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberShield | Student Cybersecurity Awareness & Habit Survey Portal</title>
+  <meta name="description" content="Assess student cybersecurity habits, test phishing detection, explore live campus threat analytics, and access comprehensive cyber safety education.">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN for Utility Styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom High-Tech Cyber Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Chart.js for Research & Statistical Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Canvas Confetti for Celebration Animations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Glowing Backgrounds -->
+  <div class="cyber-grid-bg"></div>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3 group text-decoration-none">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-shield-halved text-slate-950 text-xl"></i>
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white block group-hover:text-cyan-400 transition-colors">
+            Cyber<span class="gradient-text">Shield</span>
+          </span>
+          <span class="text-[10px] uppercase font-mono tracking-wider text-slate-400 block -mt-1">
+            Student Cyber Safety Hub
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#survey-section" class="nav-link">Habit Assessment</a>
+        <a href="#analytics-section" class="nav-link">Survey Analytics</a>
+        <a href="#phishing-section" class="nav-link">Phishing Lab</a>
+        <a href="#password-section" class="nav-link">Password Meter</a>
+        <a href="#guides-section" class="nav-link">Knowledge Hub</a>
+        <a href="#emergency-section" class="nav-link text-rose-400 hover:text-rose-300">
+          <i class="fa-solid fa-phone-volume mr-1"></i>Helpline 1930
+        </a>
+      </nav>
+
+      <!-- Right Action Items -->
+      <div class="flex items-center gap-3">
+        <!-- Dark/Light Mode Switcher -->
+        <button id="theme-toggle-btn" class="w-10 h-10 rounded-xl bg-slate-800/60 border border-slate-700/80 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-all" title="Toggle Theme">
+          <i id="theme-icon" class="fa-solid fa-sun text-amber-400"></i>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#survey-section" class="hidden sm:inline-flex btn-cyber-primary text-sm py-2 px-4">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <span>Take Student Survey</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl bg-slate-800/60 border border-slate-700 flex items-center justify-center text-slate-300" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-xl px-4 py-4 space-y-2">
+      <a href="#hero" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400">Home</a>
+      <a href="#survey-section" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400">Habit Assessment Survey</a>
+      <a href="#analytics-section" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400">Survey Analytics & Research</a>
+      <a href="#phishing-section" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400">Phishing Simulation Lab</a>
+      <a href="#password-section" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400">Password Strength Meter</a>
+      <a href="#guides-section" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400">Educational Guides</a>
+      <a href="#emergency-section" class="block py-2 px-3 rounded-lg text-rose-400 font-semibold hover:bg-slate-800">Helpline & Incident Response</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+
+    <!-- ========================================================
+         HERO SECTION
+         ======================================================== -->
+    <section id="hero" class="relative pt-6 pb-12 lg:py-16 text-center lg:text-left">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Academic Project: Cybersecurity Awareness Survey Among Students
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Assess, Educate & Protect: <br class="hidden sm:inline">
+            <span class="gradient-text">Student Cyber Hygiene</span> in the Digital Era
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            University students face unprecedented cyber threats — from malicious scholarship scams and exam credential phishing to unsecured campus Wi-Fi eavesdropping. Evaluate your habits, examine live research data, and build impenetrable digital defenses.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#survey-section" class="btn-cyber-primary text-base px-6 py-3">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>Start Student Survey</span>
+            </a>
+            <a href="#phishing-section" class="btn-cyber-secondary text-base px-6 py-3">
+              <i class="fa-solid fa-gamepad"></i>
+              <span>Try Phishing Simulator</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Ribbon -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-800/80">
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <div class="text-xl sm:text-2xl font-bold font-mono text-cyan-400">83%</div>
+              <div class="text-[11px] text-slate-400">Password Reuse Rate</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <div class="text-xl sm:text-2xl font-bold font-mono text-rose-400">65%</div>
+              <div class="text-[11px] text-slate-400">Torrent/Piracy Exposure</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <div class="text-xl sm:text-2xl font-bold font-mono text-emerald-400">1930</div>
+              <div class="text-[11px] text-slate-400">National Cyber Helpline</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+              <div class="text-xl sm:text-2xl font-bold font-mono text-amber-400">6 Dims</div>
+              <div class="text-[11px] text-slate-400">Habit Assessment</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Cyber Shield Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="cyber-card relative p-6 border-cyan-500/30 shadow-2xl">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <span class="font-mono text-xs text-slate-400 ml-2">threat-monitor::live</span>
+              </div>
+              <span class="cyber-badge badge-emerald">System Secure</span>
+            </div>
+
+            <!-- Threat Radar Graphic Mock -->
+            <div class="space-y-4">
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                    <i class="fa-solid fa-key"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-slate-200">Credential Stuffing Defense</div>
+                    <div class="text-[11px] text-slate-400">2FA + Password Managers</div>
+                  </div>
+                </div>
+                <span class="text-xs font-mono text-emerald-400 font-bold">99.9% Safe</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                    <i class="fa-solid fa-fish-fins"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-slate-200">Fake College Notice Phishing</div>
+                    <div class="text-[11px] text-slate-400">Deceptive Exam Portals</div>
+                  </div>
+                </div>
+                <span class="text-xs font-mono text-rose-400 font-bold">High Risk</span>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                    <i class="fa-solid fa-wifi"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-semibold text-slate-200">Campus Public Wi-Fi Sniffing</div>
+                    <div class="text-[11px] text-slate-400">Unencrypted Hostels / Canteens</div>
+                  </div>
+                </div>
+                <span class="text-xs font-mono text-amber-400 font-bold">Warning</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+              <a href="#survey-section" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1">
+                Take the survey to evaluate your own profile <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CORE FEATURE: STUDENT CYBERSECURITY HABIT SURVEY
+         ======================================================== -->
+    <section id="survey-section" class="scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <span class="cyber-badge badge-cyan">Interactive Research Instrument</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Student Cybersecurity <span class="gradient-text">Habit Assessment</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          This 12-question diagnostic analyzes your actual daily cyber habits across 6 critical dimensions. Upon completion, get an instant risk assessment, personalized action plan, and downloadable verified certificate.
+        </p>
+      </div>
+
+      <!-- Survey Demographic Setup & Question Card -->
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Optional Student Demographic Inputs -->
+        <div class="cyber-card mb-6 p-4 sm:p-5 bg-slate-900/80 border-slate-800">
+          <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-id-card text-cyan-400"></i>
+            <span>Student Profile Information (For Academic Certificate & Research)</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">Your Full Name</label>
+              <input type="text" id="input-student-name" placeholder="e.g. Dipesh Kumar" class="w-full bg-slate-950/80 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500">
+            </div>
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">Academic Year</label>
+              <select id="input-student-year" class="w-full bg-slate-950/80 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500">
+                <option value="1st Year">1st Year (Fresher)</option>
+                <option value="2nd Year" selected>2nd Year (Sophomore)</option>
+                <option value="3rd Year">3rd Year (Junior)</option>
+                <option value="4th Year">4th Year (Final Year)</option>
+                <option value="Postgraduate">Postgraduate / Research</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">Branch / Specialization</label>
+              <input type="text" id="input-student-branch" placeholder="e.g. Computer Engineering" class="w-full bg-slate-950/80 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- Survey Active Question Box -->
+        <div class="cyber-card p-6 sm:p-8 bg-slate-900/90 border-cyan-500/30">
+          
+          <!-- Stepper & Progress Bar -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
+              <span id="survey-question-num" class="font-bold text-cyan-400">Question 1 of 12</span>
+              <span>Progress: <strong id="survey-progress-pct" class="text-white">8%</strong></span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+              <div id="survey-progress-fill" class="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 transition-all duration-300" style="width: 8%;"></div>
+            </div>
+          </div>
+
+          <!-- Category Badge -->
+          <div class="mb-3">
+            <span id="survey-category-badge" class="cyber-badge badge-cyan text-xs">
+              <i class="fa-solid fa-key"></i> Password Hygiene & 2FA
+            </span>
+          </div>
+
+          <!-- Question Text -->
+          <h3 id="survey-question-text" class="text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
+            Loading Question...
+          </h3>
+
+          <!-- Real World Context / Threat Backdrop -->
+          <p id="survey-question-context" class="text-xs text-slate-400 mb-6 bg-slate-950/60 p-3 rounded-lg border-l-2 border-cyan-500">
+            Context loading...
+          </p>
+
+          <!-- Options Container -->
+          <div id="survey-options-container" class="space-y-3 mb-8">
+            <!-- Dynamically populated options -->
+          </div>
+
+          <!-- Survey Navigation Actions -->
+          <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+            <button id="survey-btn-prev" class="btn-cyber-secondary text-xs sm:text-sm py-2 px-4">
+              <i class="fa-solid fa-arrow-left"></i> Previous
+            </button>
+            <button id="survey-btn-next" class="btn-cyber-primary text-xs sm:text-sm py-2 px-5">
+              Next Question <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ========================================================
+           SURVEY RESULTS & DETAILED DIAGNOSTIC REPORT (HIDDEN INITIALLY)
+           ======================================================== -->
+      <div id="survey-results-section" class="hidden mt-12 max-w-4xl mx-auto space-y-8 animate-fadeIn">
+        
+        <div class="cyber-card p-6 sm:p-8 border-cyan-500/40 bg-slate-900/95">
+          
+          <div class="text-center mb-8">
+            <span class="cyber-badge badge-emerald mb-2">Diagnostic Complete</span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Your Student Cyber Hygiene Scorecard</h3>
+            <p class="text-slate-300 text-xs sm:text-sm mt-1">Based on behavioral assessment against university cybersecurity benchmarks</p>
+          </div>
+
+          <!-- Score Gauge & Overview -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pb-8 border-b border-slate-800">
+            
+            <!-- SVG Circular Gauge -->
+            <div class="md:col-span-5 flex flex-col items-center justify-center">
+              <div class="score-circle-wrapper">
+                <svg class="score-circle-svg" viewBox="0 0 160 160">
+                  <circle class="score-circle-bg" cx="80" cy="80" r="70"></circle>
+                  <circle id="score-circle-svg-bar" class="score-circle-progress" cx="80" cy="80" r="70"></circle>
+                </svg>
+                <div class="score-circle-text">
+                  <span id="res-score-value" class="text-4xl font-extrabold font-mono text-white block">0</span>
+                  <span class="text-[11px] uppercase tracking-wider text-slate-400 block">Out of 100</span>
+                </div>
+              </div>
+              <div class="mt-3">
+                <span id="res-tier-badge" class="cyber-badge badge-emerald">Cyber Guardian</span>
+              </div>
+            </div>
+
+            <!-- Risk Summary & Description -->
+            <div class="md:col-span-7 space-y-4">
+              <h4 class="text-lg font-bold text-white">Security Hygiene Analysis</h4>
+              <p id="res-summary-text" class="text-sm text-slate-300 leading-relaxed">
+                Analyzing your answers...
+              </p>
+
+              <div class="flex flex-wrap gap-3 pt-2">
+                <button onclick="openCertificateModal()" class="btn-cyber-emerald text-xs py-2 px-4">
+                  <i class="fa-solid fa-award"></i> View Student Certificate
+                </button>
+                <button onclick="retakeSurvey()" class="btn-cyber-secondary text-xs py-2 px-4">
+                  <i class="fa-solid fa-rotate-right"></i> Retake Survey
+                </button>
+                <a href="#analytics-section" class="btn-cyber-secondary text-xs py-2 px-4">
+                  <i class="fa-solid fa-chart-pie"></i> Compare With Cohort
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Domain Breakdown Progress Bars -->
+          <div class="pt-6">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-chart-simple text-cyan-400"></i> Domain-by-Domain Proficiency
+            </h4>
+            <div id="res-category-breakdown" class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- Tailored Corrective Actions / Feedback -->
+          <div class="pt-8 border-t border-slate-800 mt-6">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-list-check text-cyan-400"></i> High-Priority Action Items For You
+            </h4>
+            <div id="res-action-tips" class="space-y-3">
+              <!-- Dynamically populated feedback items -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         SURVEY RESEARCH & CAMPUS ANALYTICS DASHBOARD
+         ======================================================== -->
+    <section id="analytics-section" class="scroll-mt-24">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="cyber-badge badge-cyan">Aggregated Research Data</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
+            Student Cyber Habits <span class="gradient-text">Analytics Hub</span>
+          </h2>
+          <p class="text-slate-300 text-sm max-w-xl">
+            Real-time statistical visualization of cybersecurity awareness trends across university faculties and academic years.
+          </p>
+        </div>
+
+        <!-- Dataset Action Controls -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="addDemoBatch()" class="btn-cyber-secondary text-xs py-2 px-3" title="Add simulated student samples to study distribution">
+            <i class="fa-solid fa-user-plus text-cyan-400"></i> Add 20 Student Samples
+          </button>
+          <button onclick="exportSurveyDataCSV()" class="btn-cyber-emerald text-xs py-2 px-3" title="Download raw survey response table in CSV for research paper/presentation">
+            <i class="fa-solid fa-file-csv"></i> Export Dataset (.CSV)
+          </button>
+          <button onclick="resetToDefaultCohort()" class="text-xs text-slate-500 hover:text-slate-300 p-2" title="Reset dataset to benchmark cohort">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Key Aggregate Counters -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        
+        <div class="cyber-card p-5 bg-slate-900/70 border-slate-800">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span>Total Survey Respondents</span>
+            <i class="fa-solid fa-users text-cyan-400"></i>
+          </div>
+          <div id="stat-total-surveys" class="text-3xl font-extrabold font-mono text-white">60</div>
+          <div class="text-[11px] text-slate-500 mt-1">Students across 7 engineering & arts departments</div>
+        </div>
+
+        <div class="cyber-card p-5 bg-slate-900/70 border-slate-800">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span>Average Cyber Hygiene Score</span>
+            <i class="fa-solid fa-gauge-high text-emerald-400"></i>
+          </div>
+          <div id="stat-avg-score" class="text-3xl font-extrabold font-mono text-emerald-400">68%</div>
+          <div class="text-[11px] text-slate-500 mt-1">Moderate university baseline rating</div>
+        </div>
+
+        <div class="cyber-card p-5 bg-slate-900/70 border-slate-800">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span>Top Vulnerability Zone</span>
+            <i class="fa-solid fa-triangle-exclamation text-rose-400"></i>
+          </div>
+          <div id="stat-top-vulnerability" class="text-lg font-bold text-rose-400 truncate">Public Wi-Fi Hygiene</div>
+          <div class="text-[11px] text-slate-500 mt-1">Most students browse without VPN on open Wi-Fi</div>
+        </div>
+
+        <div class="cyber-card p-5 bg-slate-900/70 border-slate-800">
+          <div class="flex items-center justify-between text-slate-400 text-xs mb-2">
+            <span>Low-Risk Guardians</span>
+            <i class="fa-solid fa-shield-virus text-cyan-400"></i>
+          </div>
+          <div id="stat-guardian-pct" class="text-3xl font-extrabold font-mono text-cyan-400">32%</div>
+          <div class="text-[11px] text-slate-500 mt-1">Meet strict 2FA & safe download standards</div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Charts Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Radar Chart: Domain Competency -->
+        <div class="lg:col-span-6 cyber-card p-6 bg-slate-900/80">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h4 class="text-sm font-bold text-white">Cybersecurity Proficiency by Domain</h4>
+              <p class="text-[11px] text-slate-400">Average student competence across 6 threat categories</p>
+            </div>
+            <span class="cyber-badge badge-cyan text-[10px]">Radar View</span>
+          </div>
+          <div class="h-64 sm:h-72">
+            <canvas id="chart-radar-domains"></canvas>
+          </div>
+        </div>
+
+        <!-- Doughnut Chart: Risk Distribution -->
+        <div class="lg:col-span-6 cyber-card p-6 bg-slate-900/80">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h4 class="text-sm font-bold text-white">Student Risk Categorization</h4>
+              <p class="text-[11px] text-slate-400">Distribution of surveyed student body by risk profile</p>
+            </div>
+            <span class="cyber-badge badge-emerald text-[10px]">Cohort Ratio</span>
+          </div>
+          <div class="h-64 sm:h-72">
+            <canvas id="chart-risk-doughnut"></canvas>
+          </div>
+        </div>
+
+        <!-- Bar Chart: Academic Year Breakdown -->
+        <div class="lg:col-span-12 cyber-card p-6 bg-slate-900/80">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h4 class="text-sm font-bold text-white">Cyber Awareness by Academic Progression</h4>
+              <p class="text-[11px] text-slate-400">Comparison of average security score from 1st Year (Fresher) to 4th Year (Senior)</p>
+            </div>
+            <span class="cyber-badge badge-cyan text-[10px]">Cross-Sectional Analysis</span>
+          </div>
+          <div class="h-56 sm:h-64">
+            <canvas id="chart-habits-bar"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         INTERACTIVE "SPOT THE PHISH" SIMULATOR
+         ======================================================== -->
+    <section id="phishing-section" class="scroll-mt-24">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <span class="cyber-badge badge-rose">Interactive Defense Lab</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          "Spot the Phish" <span class="gradient-rose">Simulator</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Can you tell genuine college communications from cunning social engineering traps? Inspect the mock messages below and make your call.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div id="phishing-card-container" class="cyber-card p-6 sm:p-8 bg-slate-900/90 border-rose-500/30">
+          
+          <!-- Scenario Header -->
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-rose-500 animate-ping"></span>
+              <span id="phishing-scenario-title" class="text-sm font-bold text-white">Loading Scenario...</span>
+            </div>
+            <span id="phishing-progress-text" class="text-xs font-mono text-cyan-400 font-semibold">Scenario 1 of 4</span>
+          </div>
+
+          <!-- Email/Message Inspection Header -->
+          <div class="email-mock-header text-xs text-slate-300 space-y-1.5 bg-slate-950/70 p-4 rounded-xl border border-slate-800 mb-5">
+            <div><strong class="text-slate-400">From:</strong> <span id="phishing-scenario-sender" class="font-mono text-cyan-300">...</span></div>
+            <div><strong class="text-slate-400">Date:</strong> <span id="phishing-scenario-date">...</span></div>
+            <div><strong class="text-slate-400">Subject:</strong> <span id="phishing-scenario-subject" class="font-semibold text-white">...</span></div>
+          </div>
+
+          <!-- Email / Message Content Body -->
+          <div id="phishing-scenario-body" class="text-sm text-slate-200 leading-relaxed mb-6 bg-slate-950/40 p-5 rounded-xl border border-slate-800/80">
+            <!-- Populated via JS -->
+          </div>
+
+          <!-- Instant Feedback Container (Appears after answer) -->
+          <div id="phishing-feedback-box" class="hidden mb-6">
+            <!-- Populated via JS -->
+          </div>
+
+          <!-- Decision Action Buttons -->
+          <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-800">
+            <div class="flex items-center gap-3">
+              <button id="btn-choice-legit" class="btn-cyber-emerald text-xs sm:text-sm py-2.5 px-5">
+                <i class="fa-solid fa-circle-check"></i> Legitimate (Safe)
+              </button>
+              <button id="btn-choice-phish" class="btn-cyber-primary !bg-gradient-to-r !from-rose-600 !to-red-600 text-xs sm:text-sm py-2.5 px-5">
+                <i class="fa-solid fa-triangle-exclamation"></i> Phishing Scam!
+              </button>
+            </div>
+
+            <button id="btn-phishing-next" class="hidden btn-cyber-secondary text-xs sm:text-sm py-2.5 px-5">
+              Next Scenario →
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         PASSWORD STRENGTH & ENTROPY ANALYZER
+         ======================================================== -->
+    <section id="password-section" class="scroll-mt-24">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <span class="cyber-badge badge-emerald">Real-Time Security Tool</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Password Strength & <span class="gradient-text">Entropy Meter</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Analyze password complexity and cracking resistance locally in your browser. No passwords are ever saved or transmitted over the internet.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto cyber-card p-6 sm:p-8 bg-slate-900/90 border-cyan-500/30">
+        
+        <!-- Input & Controls -->
+        <div class="relative mb-3">
+          <label class="block text-xs font-semibold text-slate-400 mb-1.5">Test a Sample Password</label>
+          <div class="relative">
+            <input type="password" id="pwd-input" placeholder="Enter password to analyze..." class="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-4 py-3.5 pr-20 text-sm text-white font-mono focus:outline-none focus:border-cyan-500 transition-colors">
+            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
+              <button type="button" id="btn-toggle-pwd" class="text-slate-400 hover:text-white p-1" title="Show / Hide Password">
+                <i id="pwd-toggle-icon" class="fa-solid fa-eye"></i>
+              </button>
+              <button type="button" id="btn-copy-pwd" class="text-slate-400 hover:text-cyan-400 p-1" title="Copy to Clipboard">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strength Meter Bar -->
+        <div class="mb-4">
+          <div class="flex items-center justify-between text-xs font-semibold mb-1">
+            <span class="text-slate-400">Strength Rating:</span>
+            <span id="pwd-strength-label" class="font-mono text-slate-400">Enter a password</span>
+          </div>
+          <div class="strength-bar">
+            <div id="pwd-strength-bar" class="strength-bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- Estimated Time to Crack -->
+        <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between mb-5">
+          <div class="flex items-center gap-2.5 text-xs text-slate-300">
+            <i class="fa-solid fa-clock-rotate-left text-cyan-400 text-sm"></i>
+            <span>Est. Brute-Force Crack Time:</span>
+          </div>
+          <span id="pwd-crack-time" class="font-mono text-xs font-bold text-slate-400">Instant</span>
+        </div>
+
+        <!-- Requirements Checklist -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs text-slate-300 mb-6">
+          <div class="flex items-center gap-2">
+            <i id="chk-length" class="fa-regular fa-circle text-slate-500"></i>
+            <span>12+ Characters</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i id="chk-upper" class="fa-regular fa-circle text-slate-500"></i>
+            <span>Uppercase (A-Z)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i id="chk-lower" class="fa-regular fa-circle text-slate-500"></i>
+            <span>Lowercase (a-z)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i id="chk-number" class="fa-regular fa-circle text-slate-500"></i>
+            <span>Numbers (0-9)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i id="chk-special" class="fa-regular fa-circle text-slate-500"></i>
+            <span>Symbols (!@#$)</span>
+          </div>
+        </div>
+
+        <!-- Common Pattern Warnings -->
+        <ul id="pwd-warnings" class="hidden mb-6 space-y-1.5 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30">
+          <!-- Populated if weak/dictionary -->
+        </ul>
+
+        <!-- Generator Section -->
+        <div class="pt-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <label class="text-xs text-slate-400">Length:</label>
+            <input type="number" id="gen-pwd-length" value="16" min="8" max="32" class="w-14 bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-white text-center font-mono">
+            <span class="text-[11px] text-slate-500">(Recommended: 16)</span>
+          </div>
+
+          <button type="button" id="btn-generate-pwd" class="btn-cyber-primary text-xs py-2 px-4">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Strong Password
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         EDUCATIONAL KNOWLEDGE HUB
+         ======================================================== -->
+    <section id="guides-section" class="scroll-mt-24">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <span class="cyber-badge badge-cyan">Curriculum & Guidelines</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Student Cyber Safety <span class="gradient-text">Knowledge Hub</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Practical, actionable cybersecurity habits curated specifically for students living in hostels, using campus Wi-Fi, and navigating online academic life.
+        </p>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
+          <button class="guide-tab-btn tab-btn active" data-filter="all">All Modules</button>
+          <button class="guide-tab-btn tab-btn" data-filter="phishing">Phishing & Scams</button>
+          <button class="guide-tab-btn tab-btn" data-filter="passwords">Passwords & 2FA</button>
+          <button class="guide-tab-btn tab-btn" data-filter="wifi">Campus Wi-Fi</button>
+          <button class="guide-tab-btn tab-btn" data-filter="piracy">Safe Software</button>
+          <button class="guide-tab-btn tab-btn" data-filter="privacy">Social Media</button>
+        </div>
+      </div>
+
+      <!-- Modules Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1: Phishing & Scholarship Scams -->
+        <div class="cyber-card guide-card flex flex-col justify-between" data-category="phishing">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
+              <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+            <span class="cyber-badge badge-cyan text-[10px] mb-2">Module 1</span>
+            <h3 class="text-lg font-bold text-white mb-2">College Phishing & Scholarship Frauds</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Fraudsters impersonate college exam authorities, university registrars, and fake CSR scholarship foundations to harvest login credentials and advance fees.
+            </p>
+            <div class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Always check for legitimate domain endings (<code>.ac.in</code> or <code>.edu.in</code>).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-xmark text-rose-400 mt-0.5"></i>
+                <span>Never transfer "processing fees" for internships or government scholarships.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Password Hygiene & 2FA -->
+        <div class="cyber-card guide-card flex flex-col justify-between" data-category="passwords">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-4">
+              <i class="fa-solid fa-shield-keyhole"></i>
+            </div>
+            <span class="cyber-badge badge-emerald text-[10px] mb-2">Module 2</span>
+            <h3 class="text-lg font-bold text-white mb-2">The Fortress Strategy: 2FA & Passwords</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Password reuse is the single biggest cause of student account takeovers. A leak on an online gaming forum shouldn't compromise your college portal.
+            </p>
+            <div class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Adopt free open-source password managers like Bitwarden or Google Keychain.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Switch from SMS OTP to app-based authenticators (immune to SIM swapping).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Campus Wi-Fi Safety -->
+        <div class="cyber-card guide-card flex flex-col justify-between" data-category="wifi">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <span class="cyber-badge badge-amber text-[10px] mb-2">Module 3</span>
+            <h3 class="text-lg font-bold text-white mb-2">Campus Wi-Fi & Public Network Hygiene</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Open Wi-Fi at college cafeterias, libraries, and hostels can be exploited via "Evil Twin" hotspots that mimic legitimate network SSIDs.
+            </p>
+            <div class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Use a trusted VPN or Cloudflare 1.1.1.1 WARP when browsing on public routers.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-xmark text-rose-400 mt-0.5"></i>
+                <span>Never perform UPI transfers or bank logins on open coffee shop networks.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Safe Software & Piracy Hazards -->
+        <div class="cyber-card guide-card flex flex-col justify-between" data-category="piracy">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 text-xl mb-4">
+              <i class="fa-solid fa-bug-slash"></i>
+            </div>
+            <span class="cyber-badge badge-rose text-[10px] mb-2">Module 4</span>
+            <h3 class="text-lg font-bold text-white mb-2">Piracy, Modded APKs & Infostealers</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Cracked CAD software, modded Spotify/Insta APKs, and torrented textbooks frequently bundle RedLine or Lumma infostealers that harvest browser session cookies.
+            </p>
+            <div class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Claim free student developer packages (GitHub Student Pack, JetBrains, Autodesk).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-xmark text-rose-400 mt-0.5"></i>
+                <span>Never disable Windows Defender or antivirus to run cracked <code>.exe</code> files.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Social Media Privacy & OSINT -->
+        <div class="cyber-card guide-card flex flex-col justify-between" data-category="privacy">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
+              <i class="fa-solid fa-user-lock"></i>
+            </div>
+            <span class="cyber-badge badge-cyan text-[10px] mb-2">Module 5</span>
+            <h3 class="text-lg font-bold text-white mb-2">Social Media Privacy & Oversharing</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Posting exam admit cards, student IDs, flight boarding passes, or real-time hostel locations allows stalkers and fraudsters to forge identity credentials.
+            </p>
+            <div class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Practice delayed posting for vacations and college events.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-xmark text-rose-400 mt-0.5"></i>
+                <span>Never post images revealing barcode/QR codes from admit cards or ID badges.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: 3-2-1 Project Backup Strategy -->
+        <div class="cyber-card guide-card flex flex-col justify-between" data-category="passwords">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl mb-4">
+              <i class="fa-solid fa-floppy-disk"></i>
+            </div>
+            <span class="cyber-badge badge-emerald text-[10px] mb-2">Module 6</span>
+            <h3 class="text-lg font-bold text-white mb-2">3-2-1 Backup Rule for Academic Work</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Protect your thesis, assignments, and capstone project code against hardware disk crashes, laptop theft, and ransomware deadlines.
+            </p>
+            <div class="space-y-2 text-xs text-slate-400 border-t border-slate-800/80 pt-3">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span><strong>3</strong> copies of your work across <strong>2</strong> different media, with <strong>1</strong> offsite in cloud storage.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span>Push code frequently to private GitHub/GitLab repositories.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         STUDENT EMERGENCY & INCIDENT RESPONSE CENTER
+         ======================================================== -->
+    <section id="emergency-section" class="scroll-mt-24">
+      
+      <div class="cyber-card p-6 sm:p-10 border-rose-500/40 bg-gradient-to-b from-rose-950/20 to-slate-900/90">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-4">
+            <span class="cyber-badge badge-rose">Emergency Incident Response</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+              Hacked or Scammed? <span class="gradient-rose">Act Within The Golden Hour</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              If money has been debited via unauthorized UPI or your student email / social accounts are compromised, taking these immediate steps can stop financial loss and preserve evidence.
+            </p>
+
+            <div class="space-y-2.5 pt-2">
+              <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-950/60 border border-slate-800">
+                <span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                <div class="text-xs text-slate-300">
+                  <strong class="text-white">Call 1930 Helpline Immediately:</strong> Dial the National Cyber Crime Helpline (India) to initiate financial freeze on scammer mule accounts.
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-950/60 border border-slate-800">
+                <span class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                <div class="text-xs text-slate-300">
+                  <strong class="text-white">Freeze UPI & Debit Cards:</strong> Open your banking mobile app and toggle "Disable Online Transactions / Temporary Block".
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-950/60 border border-slate-800">
+                <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                <div class="text-xs text-slate-300">
+                  <strong class="text-white">Preserve Digital Evidence:</strong> Take full screenshots showing timestamps, transaction IDs, phone numbers, and full email headers before blocking the scammer.
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-950/60 border border-slate-800">
+                <span class="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                <div class="text-xs text-slate-300">
+                  <strong class="text-white">File Official Police Complaint:</strong> Register formal cyber crime complaint on <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline font-semibold">cybercrime.gov.in</a> and notify your college IT cell.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Official Helplines Card -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <div class="p-6 rounded-2xl bg-rose-950/30 border border-rose-500/30 text-center space-y-3">
+              <i class="fa-solid fa-headset text-4xl text-rose-400"></i>
+              <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold">National Cyber Crime Reporting</div>
+              <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white tracking-wider">
+                <a href="tel:1930" class="hover:text-rose-400 transition-colors">1930</a>
+              </div>
+              <div class="text-[11px] text-slate-300">Toll-Free 24x7 Citizen Financial Fraud Helpline</div>
+              <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" class="btn-cyber-primary !bg-gradient-to-r !from-rose-600 !to-red-600 text-xs py-2 px-4 w-full justify-center">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit cybercrime.gov.in
+              </a>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 text-xs space-y-2 text-slate-300">
+              <div class="font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-building-columns text-cyan-400"></i>
+                <span>College IT Cell Escalation Notice</span>
+              </div>
+              <p class="text-[11px] text-slate-400">
+                For compromise of official <code>@college.edu</code> credentials or campus ERP passwords, alert your Dean of Academics and Systems Administrator within 2 hours.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       PRINTABLE STUDENT CYBER CERTIFICATE MODAL
+       ======================================================== -->
+  <div id="certificate-modal" class="modal-overlay">
+    <div class="modal-content p-6 sm:p-8">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+        <div class="flex items-center gap-2 font-bold text-white text-base">
+          <i class="fa-solid fa-award text-emerald-400"></i>
+          <span>Official Student Cyber Hygiene Certificate</span>
+        </div>
+        <button onclick="closeCertificateModal()" class="text-slate-400 hover:text-white p-1 text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Certificate Printable View Area -->
+      <div id="certificate-print-area" class="p-8 sm:p-10 rounded-2xl bg-slate-950 border-2 border-cyan-500/40 text-center relative overflow-hidden shadow-2xl mb-6">
+        
+        <div class="absolute top-2 left-2 text-[10px] font-mono text-cyan-500/40">ID: CS-STUDENT-2026-AUTH</div>
+        <div class="absolute bottom-2 right-2 text-[10px] font-mono text-cyan-500/40">VERIFIED::ACADEMIC_SURVEY</div>
+
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-4">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <h3 class="text-xs uppercase tracking-widest text-cyan-400 font-bold mb-1">Certificate of Completion</h3>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">Student Cybersecurity Awareness</h2>
+        <p class="text-xs text-slate-400 mb-6">Issued under the Academic Cybersecurity Assessment Framework</p>
+
+        <p class="text-xs text-slate-300">This is to officially certify that</p>
+        <div id="cert-student-name" class="text-xl sm:text-2xl font-bold gradient-text my-2">Dipesh Kumar</div>
+        <div id="cert-student-details" class="text-xs font-mono text-slate-400 mb-6">Computer Engineering • 2nd Year</div>
+
+        <p class="text-xs text-slate-300 max-w-md mx-auto mb-6">
+          has successfully undertaken the comprehensive Student Cybersecurity Habit Assessment, evaluating critical defensive habits across authentication, phishing resistance, network protection, and incident readiness.
+        </p>
+
+        <div class="inline-flex items-center gap-6 p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs mb-6">
+          <div>
+            <div class="text-[10px] text-slate-500 uppercase">Hygiene Score</div>
+            <div id="cert-score" class="font-mono font-bold text-base text-emerald-400">85 / 100</div>
+          </div>
+          <div class="w-px h-8 bg-slate-800"></div>
+          <div>
+            <div class="text-[10px] text-slate-500 uppercase">Proficiency Rating</div>
+            <div id="cert-rating" class="font-bold text-white">Cyber Guardian</div>
+          </div>
+          <div class="w-px h-8 bg-slate-800"></div>
+          <div>
+            <div class="text-[10px] text-slate-500 uppercase">Issue Date</div>
+            <div id="cert-date" class="font-mono text-slate-300">26 October 2026</div>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center text-[10px] text-slate-500 pt-4 border-t border-slate-900">
+          <span>CyberShield Academic Initiative</span>
+          <span>Verified Cryptographic Baseline</span>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer Action Buttons -->
+      <div class="flex items-center justify-end gap-3">
+        <button onclick="closeCertificateModal()" class="btn-cyber-secondary text-xs py-2 px-4">
+          Close
+        </button>
+        <button onclick="printCertificate()" class="btn-cyber-primary text-xs py-2 px-5">
+          <i class="fa-solid fa-print"></i> Print / Save as PDF
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PHISHING GAME COMPLETION MODAL
+       ======================================================== -->
+  <div id="phishing-result-modal" class="modal-overlay">
+    <div class="modal-content p-6 sm:p-8 text-center max-w-md">
+      <div class="w-16 h-16 mx-auto rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-3xl mb-4">
+        <i class="fa-solid fa-trophy"></i>
+      </div>
+      <h3 class="text-xl font-bold text-white mb-1">Simulator Lab Completed!</h3>
+      <div id="phishing-final-badge" class="cyber-badge badge-emerald text-xs mb-3">Phishing Detective 🕵️</div>
+      <div class="text-3xl font-extrabold font-mono text-cyan-400 mb-2" id="phishing-final-score">4 / 4 (100%)</div>
+      <p id="phishing-final-desc" class="text-xs text-slate-300 leading-relaxed mb-6">
+        Great vigilance! You correctly identified deceptive domains and malicious links.
+      </p>
+
+      <div class="flex items-center justify-center gap-3">
+        <button onclick="resetPhishingGame()" class="btn-cyber-secondary text-xs py-2 px-4">
+          <i class="fa-solid fa-rotate-right"></i> Try Again
+        </button>
+        <button onclick="document.getElementById('phishing-result-modal').classList.remove('active')" class="btn-cyber-primary text-xs py-2 px-5">
+          Continue Learning
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       GLOBAL NOTIFICATIONS TOAST CONTAINER
+       ======================================================== -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-slate-800 bg-slate-950/80 mt-20 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-800/80">
+        
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center text-slate-950 font-bold">
+              <i class="fa-solid fa-shield"></i>
+            </div>
+            <span class="text-lg font-bold text-white">Cyber<span class="gradient-text">Shield</span></span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Student Cybersecurity Awareness, Habit Assessment & Incident Response Hub. Developed for academic survey research and educational excellence.
+          </p>
+          <div class="text-[11px] text-slate-500">
+            Project Topic: <em>Cybersecurity Awareness Survey Among Students: Assess cybersecurity habits; develop educational content or a simple awareness website.</em>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#survey-section" class="hover:text-cyan-400">Student Habit Assessment</a></li>
+            <li><a href="#analytics-section" class="hover:text-cyan-400">Live Campus Analytics</a></li>
+            <li><a href="#phishing-section" class="hover:text-cyan-400">Spot The Phish Simulator</a></li>
+            <li><a href="#password-section" class="hover:text-cyan-400">Password Entropy Meter</a></li>
+            <li><a href="#guides-section" class="hover:text-cyan-400">Student Safety Guides</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Emergency Resources</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="tel:1930" class="text-rose-400 font-semibold"><i class="fa-solid fa-phone mr-1"></i>Helpline: 1930</a></li>
+            <li><a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400">cybercrime.gov.in</a></li>
+            <li><a href="https://cert-in.org.in" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400">CERT-In Alerts</a></li>
+            <li><a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400">Have I Been Pwned?</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+        <div>© 2026 CyberShield Student Awareness Platform. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-code text-cyan-400"></i> Pure Vanilla JS + Tailwind + Chart.js</span>
+          <span>•</span>
+          <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-lock text-emerald-400"></i> 100% Client-Side Privacy</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/survey-data.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/phishing-game.js"></script>
+  <script src="js/password-tool.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
